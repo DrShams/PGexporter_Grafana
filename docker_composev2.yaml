@@ -6,7 +6,7 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: pass123
+      POSTGRES_PASSWORD: example
       POSTGRES_USER: ruslan
       POSTGRES_DB: demo
     depends_on:
@@ -23,7 +23,7 @@ services:
   postgres-exporter:
     image: quay.io/prometheuscommunity/postgres-exporter
     environment:
-      DATA_SOURCE_NAME: "postgresql://postgres:pass123@localhost:5432/postgres?sslmode=disable"
+      DATA_SOURCE_NAME: "postgresql://ruslan:pass123@localhost:5432/postgres?sslmode=disable"
     networks:
     - postgres
 
