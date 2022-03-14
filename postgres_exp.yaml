@@ -4,30 +4,41 @@ services:
 
   db:
     image: postgres
+    container_name: postgres
     restart: always
     environment:
       POSTGRES_PASSWORD: example
       POSTGRES_USER: ruslan
       POSTGRES_DB: demo
-    depends_on:
-      - postgres-exporter
     networks:
       - postgres
 
   adminer:
     image: adminer
+    container_name: adminer
     restart: always
     ports:
       - 8080:8080
+    networks:
+      - postgres
 
   postgres-exporter:
     image: quay.io/prometheuscommunity/postgres-exporter
+    container_name: postgres-exporter
     environment:
-      DATA_SOURCE_NAME: "postgresql://ruslan:pass123@localhost:5432/postgres?sslmode=disable"
+      DATA_SOURCE_NAME: "postgresql://ruslan:example@db:5432/postgres?sslmode=disable"
+    depends_on:
+      - db
+    ports:
+      - 9187:9187
     networks:
     - postgres
+    - prometheus
 
 networks:
   postgres:
     name: postgres
     driver: bridge
+  prometheus:
+    name: prometheus
+    external: true
