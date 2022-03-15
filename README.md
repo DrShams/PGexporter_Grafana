@@ -1,6 +1,6 @@
 ![img](images/scheme.png)
 
-#1 Собрать контейнеры из compose файлов
+#1 Собрать контейнеры из compose файлов\
 `docker-compose -f prom_grafana.yaml up`\
 `docker-compose -f postgres_exp.yaml up`
 
