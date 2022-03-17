@@ -11,7 +11,7 @@ services:
       POSTGRES_USER: ruslan
       POSTGRES_DB: demo
     ports:
-      - 5432:5432
+      - 5430:5432
     networks:
       - postgres
     deploy:
