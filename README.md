@@ -19,7 +19,7 @@ http://192.168.19.128 - ип адрес хоста Linux Ubuntu
 
 #4 Образец выполнения селект запроса с бд
 
-> `docker exec -i postgres psql -U ruslan -d demo -c 'SELECT * FROM "flights_v" WHERE "flight_id" > '0' AND "departure_city" IS NOT NULL'`
+> `docker exec -i postgres psql -U ruslan -d demo -c 'SELECT * FROM "flights_v" WHERE "flight_id" > '0' AND "departure_city" IS NOT NULL' `
 
 #5 Можно протестировать базу данных внутри следующим скриптом .sh
 ```
