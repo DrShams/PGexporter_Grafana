@@ -11,8 +11,10 @@
 
 http://192.168.19.128 - ип адрес хоста Linux Ubuntu
 
-#3 Grafana -> Data Source указать http://192.168.19.128:9090 - Порт Prometheus
-#-> import dashboard grafana id 9628
+#3 Grafana
+- Import dashboard grafana id 9628
+- Data Source указать http://192.168.19.128:9090 - Порт Prometheus
+
 
 #4 Образец выполнения селект запроса с бд
 
