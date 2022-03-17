@@ -8,7 +8,7 @@ services:
     restart: always
     #change the path where prometheus.yml will be taken from
     volumes:
-    - /home/ruslan/prometheus.yml:/etc/prometheus/prometheus.yml
+    - /$PWD/PGexporter_Grafana/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - 9090:9090
     networks:

@@ -6,12 +6,12 @@ services:
     image: postgres
     container_name: postgres
     restart: always
-    ports:
-      - 5432:5432
     environment:
       POSTGRES_PASSWORD: example
       POSTGRES_USER: ruslan
       POSTGRES_DB: demo
+    #ports:
+    #  - 5432:5432  
     networks:
       - postgres
     deploy:
