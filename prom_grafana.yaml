@@ -5,6 +5,8 @@ services:
   prometheus:
     image: prom/prometheus
     container_name: prometheus
+    restart: always
+    #change the path where prometheus.yml will be taken from
     volumes:
     - /home/ruslan/prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
@@ -13,8 +15,9 @@ services:
     - prometheus
 
   grafana:
-    container_name: grafana
     image: grafana/grafana-enterprise:8.4.3-ubuntu
+    container_name: grafana
+    restart: always
     ports:
       - 3000:3000
     networks:
