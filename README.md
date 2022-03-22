@@ -34,6 +34,7 @@ done
 > JDBC -> DatabaseURL -> jdbc:postgresql://192.168.19.128:5430/demo
 
 > Базовые запросы для теста
+
 ```
 INSERT INTO "aircrafts_data" ("aircraft_code", "model", "range") VALUES ('CR6',	'{"en": "Bombardier CRJ-200", "ru": "Ruslan CRJ-200"}', 9700);
 
