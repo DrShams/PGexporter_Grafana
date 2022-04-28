@@ -1,5 +1,13 @@
 ![img](images/scheme.png)
 
+# Для начала убедитесь что версия не ниже 1.29.2
+
+> docker-compose version
+
+# В файл prometheus.yml измените ip адрес хоста, к примеру
+
+> - targets: ['192.168.19.128:9187']
+
 #1 Собрать контейнеры из compose файлов
 
 > `docker-compose -f prom_grafana.yaml up`
@@ -7,7 +15,8 @@
 
 #2 Импорт демо базы данных в POSTGRES
 
-> `docker exec -i [container_name] psql -U ruslan -d demo < demo.sql`
+> Образец команды `docker exec -i [container_name] psql -U ruslan -d demo < demo.sql`
+> Так как у нас название контейнера postgres пишем следующее:
 > `docker exec -i postgres psql -U ruslan -d demo < demo.sql`
 
 http://192.168.19.128 - ип адрес хоста Linux Ubuntu
@@ -43,4 +52,23 @@ DELETE FROM "aircrafts_data" WHERE (("aircraft_code" = 'CR6'));
 SELECT "airport_code", "airport_name", "city" FROM "airports" GROUP BY "airport_name", "airport_code", "city" HAVING "airport_name" LIKE 'Vlad%' ORDER BY "airport_name"
 
 UPDATE "aircrafts_data" SET "aircraft_code" = 'CR4', "model" = '{"en": "Bombardier CRJ-200", "ru": "Бомбардье CRJ-200"}', "range" = '2700' WHERE "aircraft_code" = 'CR4';
+```
+
+```
+SELECT *
+FROM bookings
+WHERE book_date BETWEEN '2017-07-01 00:00:00+00'::timestamp AND '2017-07-31 23:59:00+00'::timestamp
+ORDER BY book_date DESC
+
+SELECT *
+FROM bookings
+WHERE book_date BETWEEN '2017-07-01 00:00:00+00' AND '2017-07-31 23:59:00+00'
+ORDER BY book_date DESC
+
+
+COUNT(*)
+```
+
+```
+
 ```
