@@ -1,6 +1,6 @@
 ![img](images/scheme.png)
 
-#Для начала убедитесь что версия не ниже 1.29.2
+#Для начала убедитесь что версия не ниже 1.28.5
 
 > docker-compose version
 
@@ -15,9 +15,10 @@
 
 #2 Импорт демо базы данных в POSTGRES
 
-> Образец команды `docker exec -i [container_name] psql -U ruslan -d demo < demo.sql`
-> Так как у нас название контейнера postgres пишем следующее:
 > `docker exec -i postgres psql -U ruslan -d demo < demo.sql`
+> -U ruslan - это имя мы задаем этот параметр внутри файла postgres_exp.yaml -> POSTGRES_USER: ruslan
+> -d demo - это демо название нашей базы данных POSTGRES_DB: demo
+> < demo.sql - это мы импортируем нашу демо бд
 
 http://192.168.19.128 - ип адрес хоста Linux Ubuntu
 
